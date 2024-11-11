@@ -1,22 +1,21 @@
-$mainColor: #22232c;
+@import url('https://fonts.googleapis.com/css2?family=Teko&display=swap');
+$mainColor: #16161aef;
 $textColor: #c1c2c5;
-$mainFont: Roboto;
+$mainFont: Teko;
 
-$secondaryColor: rgba(12, 12, 12, 0.4);
-$secondaryColorHighlight: #33343F;
-$secondaryColorLight: rgba(0, 0, 0, 0.5);
-$secondaryColorDark: rgba(12, 12, 12, 0.8);
+$secondaryColor: #16161aef;
+$secondaryColorLight: #16161aef;
+$secondaryColorDark: #16161aef;
 
 $gridCols: 5;
 $gridRows: 5;
 $gridSize: 10.2vh;
-$gridGap: 2px;
+$gridGap: 0.5rem;
 $containerSize: calc(#{$gridRows} * #{$gridSize + 0.22vh} + #{$gridRows} * #{$gridGap});
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
-    'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100vh;
@@ -58,7 +57,7 @@ input[type='number']::-webkit-outer-spin-button {
 
 .context-menu-list {
   min-width: 200px;
-  background-color: $mainColor;
+  background-color: #020610;
   color: $textColor;
   padding: 4px;
   border-color: rgba(0, 0, 0, 0.2);
@@ -84,7 +83,7 @@ input[type='number']::-webkit-outer-spin-button {
     transform: none;
   }
   &:hover {
-    background-color: $secondaryColorHighlight;
+    background-color: #33343F;
     cursor: pointer;
   }
 }
@@ -116,62 +115,59 @@ button:active {
 }
 
 .inventory-wrapper {
+  background-color: rgba(12, 12, 17, 0.966);
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   height: 100%;
-
   gap: 20px;
 }
 
 .inventory-control {
   display: flex;
+  width: 2.5rem;
+  margin-right: 1rem;
 
-  .inventory-control-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    justify-content: center;
-    align-items: center;
+.inventory-control-input {
+  transition: 200ms;
+  padding: 16px 8px;
+  border-radius: 8px;
+  font-family: $mainFont;
+  margin-top: 45rem;
+  font-size: 14px;
+  text-align: center;
+  outline: none;
+  border: none;
+  color: #fff;
+  background-color: #16161a;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  &:focus-within {
+    background-color: #191920;
   }
+  width: 100%;
+}
+}
 
-  .inventory-control-input {
-    transition: 200ms;
-    padding: 16px 8px;
-    border-radius: 2.5%;
-    font-family: $mainFont;
-    font-size: 16px;
-    text-align: center;
-    outline: none;
-    border: none;
-    color: #fff;
-    background-color: $secondaryColor;
-    &:focus-within {
-      background-color: $secondaryColorDark;
-    }
-  }
-
-  .inventory-control-button {
-    font-size: 14px;
-    color: #fff;
-    background-color: $secondaryColor;
-    transition: 200ms;
-    padding: 12px 8px;
-    border-radius: 2.5%;
-    border: none;
-    text-transform: uppercase;
-    font-family: $mainFont;
-    width: 100%;
-    font-weight: 500;
-    &:hover {
-      background-color: $secondaryColorDark;
-    }
+.inventory-control-button {
+  font-size: 14px;
+  color: #fff;
+  background-color: $secondaryColor;
+  transition: 200ms;
+  padding: 12px 8px;
+  border-radius: 2.5%;
+  border: none;
+  text-transform: uppercase;
+  font-family: $mainFont;
+  width: 100%;
+  font-weight: 500;
+  &:hover {
+    background-color: $secondaryColorDark;
   }
 }
 
 .useful-controls-dialog {
-  background-color: $mainColor;
+  background-color: #020610;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -181,12 +177,8 @@ button:active {
   display: flex;
   flex-direction: column;
   padding: 16px;
-  border-radius: 4px;
-  gap: 16px;
-}
-
-.useful-controls-dialog-overlay {
-  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  gap: 10px;
 }
 
 .useful-controls-dialog-title {
@@ -207,7 +199,6 @@ button:active {
   border-radius: 4px;
   fill: $textColor;
   &:hover {
-    background-color: $secondaryColorHighlight;
     cursor: pointer;
   }
 }
@@ -231,13 +222,13 @@ button:active {
   transition: 200ms !important;
   border: none;
   color: white;
-  width: 52px;
-  height: 52px;
+  width: 30px;
+  height: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
   fill: white;
-  border-radius: 5% !important;
+  border-radius: 6px !important;
   background-color: $secondaryColor !important;
   &:hover {
     background-color: $secondaryColorDark !important;
@@ -268,6 +259,7 @@ button:active {
   justify-content: space-between;
   p {
     font-size: 16px;
+    font-weight: 800;
   }
 }
 
@@ -285,7 +277,7 @@ button:active {
   background-color: $secondaryColor;
   background-repeat: no-repeat;
   background-position: center;
-  border-radius: 2.5%;
+  border-radius: 6px;
   image-rendering: -webkit-optimize-contrast;
   position: relative;
   background-size: 7vh;
@@ -296,12 +288,10 @@ button:active {
 }
 
 .inventory-slot-label-box {
-  background-color: $mainColor;
+  background-color: transparent;
   color: $textColor;
   text-align: center;
-  border-bottom-left-radius: 0.25vh;
-  border-bottom-right-radius: 0.25vh;
-  border-top-color: rgba(0, 0, 0, 0.2);
+  border-top-color: rgba(163, 201, 204, 0.2);
   border-top-style: inset;
   border-top-width: 1px;
 }
@@ -312,19 +302,21 @@ button:active {
   overflow: hidden;
   text-overflow: ellipsis;
   padding: 2px 3px;
-  font-weight: 400;
-  font-family: $mainFont;
-  font-size: 12px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
 }
 
 .inventory-slot-number {
-  background-color: white;
-  color: black;
-  height: 12px;
-  border-top-left-radius: 0.25vh;
-  border-bottom-right-radius: 0.25vh;
-  padding: 3px;
-  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10px;
+  height: 15px;
+  background-color: #020610;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  margin: 0 2px;
+  padding-left: 0px;
+  font-size: 12.5px;
   font-family: $mainFont;
 }
 
@@ -353,12 +345,19 @@ button:active {
   display: flex;
   flex-direction: row;
   align-self: flex-end;
-  padding: 3px;
-  gap: 3px;
+  justify-content: space-between;
   p {
-    font-size: 12px;
+    font-weight: 400;
+    font-size: 10px;
   }
 }
+.item-count{
+  .count-text {
+    margin-top: 64px;
+    font-size: 10px;
+  }
+}
+
 
 .item-slot-currency-wrapper {
   display: flex;
@@ -505,16 +504,18 @@ button:active {
 
 .durability-bar {
   background: rgba(0, 0, 0, 0.5);
-  height: 3px;
+  height: 2px;
+  border-radius: 2px;
   overflow: hidden;
 }
 
 .weight-bar {
-  background: rgba(0, 0, 0, 0.4);
+  background: #25252cef;
   border: 1px inset rgba(0, 0, 0, 0.1);
-  height: 0.8vh;
-  border-radius: 5%;
+  height: 0.4vh;
+  border-radius: 5px;
   overflow: hidden;
+  margin-top: 0.5rem;
 }
 
 .transition-fade-enter {

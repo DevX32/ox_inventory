@@ -5,8 +5,6 @@ import { selectItemAmount, setItemAmount } from '../../store/inventory';
 import { DragSource } from '../../typings';
 import { onUse } from '../../dnd/onUse';
 import { onGive } from '../../dnd/onGive';
-import { fetchNui } from '../../utils/fetchNui';
-import { Locale } from '../../store/locale';
 import UsefulControls from './UsefulControls';
 
 const InventoryControl: React.FC = () => {
@@ -47,15 +45,6 @@ const InventoryControl: React.FC = () => {
             onChange={inputHandler}
             min={0}
           />
-          <button className="inventory-control-button" ref={use}>
-            {Locale.ui_use || 'Use'}
-          </button>
-          <button className="inventory-control-button" ref={give}>
-            {Locale.ui_give || 'Give'}
-          </button>
-          <button className="inventory-control-button" onClick={() => fetchNui('exit')}>
-            {Locale.ui_close || 'Close'}
-          </button>
         </div>
       </div>
 

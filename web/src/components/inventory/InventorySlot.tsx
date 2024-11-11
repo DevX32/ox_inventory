@@ -1,4 +1,4 @@
-import React, { useCallback, useRef } from 'react';
+import React, { useRef } from 'react';
 import { DragSource, Inventory, InventoryType, Slot, SlotWithItem } from '../../typings';
 import { useDrag, useDragDropManager, useDrop } from 'react-dnd';
 import { useAppDispatch } from '../../store';
@@ -29,9 +29,9 @@ const InventorySlot: React.ForwardRefRenderFunction<HTMLDivElement, SlotProps> =
 ) => {
   const manager = useDragDropManager();
   const dispatch = useAppDispatch();
-  const timerRef = useRef<number | null>(null);
+  const timerRef = useRef<NodeJS.Timer | null>(null);
 
-  const canDrag = useCallback(() => {
+  const canDrag = React.useCallback(() => {
     return canPurchaseItem(item, { type: inventoryType, groups: inventoryGroups }) && canCraftItem(item, inventoryType);
   }, [item, inventoryType, inventoryGroups]);
 
@@ -139,9 +139,9 @@ const InventorySlot: React.ForwardRefRenderFunction<HTMLDivElement, SlotProps> =
         <div
           className="item-slot-wrapper"
           onMouseEnter={() => {
-            timerRef.current = window.setTimeout(() => {
+            timerRef.current = setTimeout(() => {
               dispatch(openTooltip({ item, inventoryType }));
-            }, 500) as unknown as number;
+            }, 500);
           }}
           onMouseLeave={() => {
             dispatch(closeTooltip());
@@ -162,14 +162,16 @@ const InventorySlot: React.ForwardRefRenderFunction<HTMLDivElement, SlotProps> =
                 {item.weight > 0
                   ? item.weight >= 1000
                     ? `${(item.weight / 1000).toLocaleString('en-us', {
-                        minimumFractionDigits: 2,
-                      })}kg `
+                      minimumFractionDigits: 2,
+                    })} kg`
                     : `${item.weight.toLocaleString('en-us', {
-                        minimumFractionDigits: 0,
-                      })}g `
+                      minimumFractionDigits: 0,
+                    })} g`
                   : ''}
               </p>
-              <p>{item.count ? item.count.toLocaleString('en-us') + `x` : ''}</p>
+              <div className="item-count">
+                <p className="count-text">{item.count ? item.count.toLocaleString('en-us') + 'x' : ''}</p>
+              </div>
             </div>
           </div>
           <div>
