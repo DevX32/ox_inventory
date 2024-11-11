@@ -26,7 +26,7 @@ debugData([
         items: [
           {
             slot: 1,
-            name: 'iron',
+            name: 'water',
             weight: 3000,
             metadata: {
               description: `name: Svetozar Miletic  \n Gender: Male`,
@@ -37,8 +37,8 @@ debugData([
             },
             count: 5,
           },
-          { slot: 2, name: 'powersaw', weight: 0, count: 1, metadata: { durability: 75 } },
-          { slot: 3, name: 'copper', weight: 100, count: 12, metadata: { type: 'Special' } },
+          { slot: 2, name: 'water', weight: 0, count: 1, metadata: { durability: 75 } },
+          { slot: 3, name: 'water', weight: 100, count: 12, metadata: { type: 'Special' } },
           {
             slot: 4,
             name: 'water',
