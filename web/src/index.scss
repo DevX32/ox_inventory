@@ -135,7 +135,7 @@ button:active {
   border-radius: 8px;
   font-family: $mainFont;
   margin-top: 45rem;
-  font-size: 14px;
+  font-size: 15px;
   text-align: center;
   outline: none;
   border: none;
@@ -146,7 +146,7 @@ button:active {
     background-color: #191920;
   }
   width: 100%;
-}
+  }
 }
 
 .inventory-control-button {
@@ -244,15 +244,12 @@ button:active {
   color: grey !important;
 }
 
-// Dialog is used fro useful controls window
-
-
-// inventory grids
 .inventory-grid-wrapper {
   display: flex;
   flex-direction: column;
   gap: calc($gridGap * 2);
 }
+
 .inventory-grid-header-wrapper {
   display: flex;
   flex-direction: row;
@@ -272,12 +269,11 @@ button:active {
   overflow-y: scroll;
 }
 
-// inventory slots
 .inventory-slot {
   background-color: $secondaryColor;
   background-repeat: no-repeat;
   background-position: center;
-  border-radius: 6px;
+  border-radius: 5px;
   image-rendering: -webkit-optimize-contrast;
   position: relative;
   background-size: 7vh;
@@ -300,18 +296,18 @@ button:active {
   text-transform: uppercase;
   white-space: nowrap;
   overflow: hidden;
+  margin-top: -2px;
   text-overflow: ellipsis;
-  padding: 2px 3px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 11px;
+  font-family: $mainFont;
+  font-size: 15px;
 }
 
 .inventory-slot-number {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 10px;
-  height: 15px;
+  width: 12px;
+  height: 20px;
   background-color: #020610;
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   margin: 0 2px;
@@ -326,7 +322,7 @@ button:active {
   justify-content: space-between;
   height: 100%;
   p {
-    font-size: 12px;
+    font-size: 15px;
   }
 }
 
@@ -348,16 +344,15 @@ button:active {
   justify-content: space-between;
   p {
     font-weight: 400;
-    font-size: 10px;
+    font-size: 15px;
   }
 }
 .item-count{
   .count-text {
     margin-top: 64px;
-    font-size: 10px;
+    font-size: 15px;
   }
 }
-
 
 .item-slot-currency-wrapper {
   display: flex;
@@ -381,7 +376,6 @@ button:active {
     text-shadow: 0.1vh 0.1vh 0 rgba(0, 0, 0, 0.7);
   }
 }
-
 
 .tooltip-wrapper {
   pointer-events: none;
@@ -464,8 +458,6 @@ button:active {
   flex-direction: row;
   justify-content: space-between;
 }
-
-// item notifications
 
 .item-notification-container {
   display: flex;
